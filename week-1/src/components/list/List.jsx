@@ -9,22 +9,17 @@ function List({todos, setTodos}) {
     const newTodos = todos.filter((todo) => {
       return todo.id !== todoId;
     });
-
     setTodos(newTodos);
   };
 
   const onCompleteHandler = (todoId) => {
     const newTodos = todos.map((todo) => {
       if (todo.id === todoId) {
-        return {
-          ...todo,
-          isDone: !todo.isDone,
-        };
+        return {...todo, isDone: !todo.isDone};
       } else {
         return { ...todo };
       }
     });
-
     setTodos(newTodos);
   };
 
@@ -33,7 +28,8 @@ function List({todos, setTodos}) {
       <h1 className='list-title'>Working!</h1>
       <ListBox1>
         {todos.map((todo) => {
-          if(!todo.isDone) {
+          console.log(todo.isDone);
+          if (todo.isDone === false) {
             return (
               <Todo todo={todo} key={todo.id} setTodos={setTodos} onDeleteHanlder={onDeleteHanlder} onCompleteHandler={onCompleteHandler} />
             )
@@ -45,7 +41,7 @@ function List({todos, setTodos}) {
       <h1 className='list-title'>Done!</h1>
       <ListBox2>
         {todos.map((todo) => {
-          if (todo.isDone) {
+          if (todo.isDone === true) {
             return (
               <Todo todo={todo} key={todo.id} setTodos={setTodos} onDeleteHanlder={onDeleteHanlder} onCompleteHandler={onCompleteHandler} />
             );
