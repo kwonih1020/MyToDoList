@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonBox, Button, TodoContainer } from './style.js';
 
-function Todo({todo, setTodos, onDeleteHanlder, onCompleteHandler}) {
+function Todo({todo, onDeleteHanlder, onCompleteHandler}) {
   const cancelClick = () => {
     if(todo.isDone) {
       return "취소"
