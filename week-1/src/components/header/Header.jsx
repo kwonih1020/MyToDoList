@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import styled from "styled-components";
-import "./style.css";
-import Layout from '../layout/Layout';
+import React from 'react';
+import "./style.js";
+import HeaderContainer from './style.js';
 
 function Header() {
   return (
-    <div className='header_container'>
+    <HeaderContainer>
       <div>My Todo List</div>
       <div>React</div>
-    </div>
+    </HeaderContainer>
+      
   )
 }
 

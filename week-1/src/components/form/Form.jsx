@@ -18,13 +18,13 @@ function Form() {
   const onChangeHandlerTitle = (event) => {
     const inputTitle = event.target.value;
     setTitle(inputTitle);
-    // console.log(inputTitle)
+    console.log(inputTitle);
   }
 
   const onChangeHandlerBody = (event) => {
     const inputBody = event.target.value;
     setBody(inputBody);
-    // console.log(inputBody)
+    console.log(inputBody);
   }
 
   const onClickHandler = (event) => {
@@ -46,7 +46,6 @@ function Form() {
         <Input type="text" onChange={onChangeHandlerTitle} value={title}></Input>
         <Label>내용</Label>
         <Input type="text" onChange={onChangeHandlerBody} value={body}></Input>
-          
         <Button onClick={onClickHandler}>추가하기</Button>
       </FormStyled>
     <List todos={todos} setTodos={setTodos} />
