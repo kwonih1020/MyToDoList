@@ -4,6 +4,7 @@ import { ListBox1, ListBox2, ListContainer } from './style.js';
 import Todo from '../todo/Todo.jsx';
 
 function List({todos, setTodos}) {
+
   const onDeleteHanlder = (todoId) => {
     const newTodos = todos.filter((todo) => {
       return todo.id !== todoId;
@@ -12,7 +13,7 @@ function List({todos, setTodos}) {
     setTodos(newTodos);
   };
 
-  const onEditHandler = (todoId) => {
+  const onCompleteHandler = (todoId) => {
     const newTodos = todos.map((todo) => {
       if (todo.id === todoId) {
         return {
@@ -34,7 +35,7 @@ function List({todos, setTodos}) {
         {todos.map((todo) => {
           if(!todo.isDone) {
             return (
-              <Todo todo={todo} key={todo.id} setTodos={setTodos} onDeleteHanlder={onDeleteHanlder} onEditHandler={onEditHandler} />
+              <Todo todo={todo} key={todo.id} setTodos={setTodos} onDeleteHanlder={onDeleteHanlder} onCompleteHandler={onCompleteHandler} />
             )
           } else {
             return null;
@@ -46,7 +47,7 @@ function List({todos, setTodos}) {
         {todos.map((todo) => {
           if (todo.isDone) {
             return (
-              <Todo todo={todo} key={todo.id} setTodos={setTodos} onDeleteHanlder={onDeleteHanlder} onEditHandler={onEditHandler} />
+              <Todo todo={todo} key={todo.id} setTodos={setTodos} onDeleteHanlder={onDeleteHanlder} onCompleteHandler={onCompleteHandler} />
             );
           } else {
             return null;
