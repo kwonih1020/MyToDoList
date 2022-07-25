@@ -6,9 +6,7 @@ import Todo from '../todo/Todo.jsx';
 function List({todos, setTodos}) {
 
   const onDeleteHanlder = (todoId) => {
-    const newTodos = todos.filter((todo) => {
-      return todo.id !== todoId;
-    });
+    const newTodos = todos.filter((todo) => todo.id !== todoId );
     setTodos(newTodos);
   };
 

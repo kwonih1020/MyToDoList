@@ -8,7 +8,7 @@ function Form() {
   const [body, setBody] = useState("");
   const [todos, setTodos] = useState([
     {
-      id: 0, 
+      id: Math.random().toString(36).substring(2, 12), 
       title: '개인과제', 
       body: '스스로 개인과제 완성하기', 
       isDone: false
@@ -30,11 +30,12 @@ function Form() {
   const onClickHandler = (event) => {
     event.preventDefault();
     setTodos([...todos, {
-      id: todos.length,
+      id: Math.random().toString(36).substring(2, 12),
       title: title,
       body: body,
       isDone: false,
     }]);
+    console.log(todos)
     setTitle("");
     setBody("");
   }
