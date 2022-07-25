@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0",
-    "homepage" : "https://kwonih1020.github.io/MyTodoList/"
-  }
+    "gh-pages": "^4.0.0"
+  },
+  "homepage" : "https://kwonih1020.github.io/MyTodoList"
 }
