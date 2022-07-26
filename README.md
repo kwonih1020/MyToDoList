@@ -14,14 +14,13 @@
 - React.js 로 간단한 ToDoList앱을 만들었습니다. 
 - 2022.07.22 ~ 2022.07.28
 
-## ENVIRONMENT 🛠
+## 라이브러리 🛠
 - React.js
-- Virtual DOM
 
-## Module
+## 환경설정
 ```
-- npm install --global yarn
-- yarn create react-app
+- npm install --global yarn (yarn을 설치 안했을때)
+- yarn create react-app "프로젝트 명"
 - yarn start
 - yarn add styled-components
 ```
