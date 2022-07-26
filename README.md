@@ -28,3 +28,4 @@
 ##
 
 ## 메인페이지
+![Screen Shot 2022-07-26 at 3 48 24 PM](https://user-images.githubusercontent.com/26310384/180941666-f6e2e573-eee3-480d-8aad-72cc66433008.png)
