@@ -7,7 +7,6 @@ import List from '../list/List';
 import LayoutContainer from './style.js';
 
 const Layout = () => {
-
   const [inputs, setInputs] = useState({
     title: '',
     body: ''
@@ -45,7 +44,7 @@ const Layout = () => {
       title: '',
       body: ''
     });
-  }
+  };
 
   return (
     <LayoutContainer>
@@ -53,7 +52,7 @@ const Layout = () => {
       <Form onChangeHandlerInput={onChangeHandlerInput} onClickHandler={onClickHandler} todos={todos} setTodos={setTodos} title={title} body={body} />
       <List todos={todos} setTodos={setTodos} />
     </LayoutContainer>
-  )
+  );
 }
 
 export default Layout;

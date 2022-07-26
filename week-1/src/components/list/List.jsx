@@ -1,11 +1,10 @@
 // eslint-disable-next-line
 
 import React from 'react';
-import "./style.js";
 import { ListBox1, ListBox2, ListContainer } from './style.js';
 import Todo from '../todo/Todo';
 
-const List = ({todos, setTodos}) => {
+const List = ( { todos, setTodos } ) => {
 
   const onDeleteHanlder = (id) => {
     const newTodos = todos.filter((todo) => todo.id !== id );
