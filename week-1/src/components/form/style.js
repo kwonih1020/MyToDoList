@@ -34,8 +34,6 @@ const Input = styled.input `
   width: 240px;
   background-color: white;
 `
-
-
 export {
   FormStyled, 
   Label,

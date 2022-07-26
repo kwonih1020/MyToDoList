@@ -1,18 +1,20 @@
+// eslint-disable-next-line
+
 import React from 'react';
 import "./style.js";
 import { ListBox1, ListBox2, ListContainer } from './style.js';
-import Todo from '../todo/Todo.jsx';
+import Todo from '../todo/Todo';
 
-function List({todos, setTodos}) {
+const List = ({todos, setTodos}) => {
 
-  const onDeleteHanlder = (todoId) => {
-    const newTodos = todos.filter((todo) => todo.id !== todoId );
+  const onDeleteHanlder = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id );
     setTodos(newTodos);
   };
 
-  const onCompleteHandler = (todoId) => {
+  const onCompleteHandler = (id) => {
     const newTodos = todos.map((todo) => {
-      if (todo.id === todoId) {
+      if (todo.id === id) {
         return {...todo, isDone: !todo.isDone};
       } else {
         return { ...todo };
@@ -26,7 +28,6 @@ function List({todos, setTodos}) {
       <h1 className='list-title'>Working!</h1>
       <ListBox1>
         {todos.map((todo) => {
-          console.log(todo.isDone);
           if (todo.isDone === false) {
             return (
               <Todo todo={todo} key={todo.id} setTodos={setTodos} onDeleteHanlder={onDeleteHanlder} onCompleteHandler={onCompleteHandler} />

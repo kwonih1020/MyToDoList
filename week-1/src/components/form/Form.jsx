@@ -1,44 +1,10 @@
-import React, { useState } from 'react';
+// eslint-disable-next-line
+
+import React from 'react';
 import "./style.js";
-import List from '../list/List';
 import { Button, FormStyled, Label, Input } from './style.js';
 
-function Form() {
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
-  const [todos, setTodos] = useState([
-    {
-      id: Math.random().toString(36).substring(2, 12), 
-      title: '개인과제', 
-      body: '스스로 개인과제 완성하기', 
-      isDone: false
-    }
-  ])
-  
-  const onChangeHandlerTitle = (event) => {
-    const inputTitle = event.target.value;
-    setTitle(inputTitle);
-    // console.log(inputTitle);
-  }
-
-  const onChangeHandlerBody = (event) => {
-    const inputBody = event.target.value;
-    setBody(inputBody);
-    // console.log(inputBody);
-  }
-
-  const onClickHandler = (event) => {
-    event.preventDefault();
-    setTodos([...todos, {
-      id: Math.random().toString(36).substring(2, 12),
-      title: title,
-      body: body,
-      isDone: false,
-    }]);
-    console.log(todos)
-    setTitle("");
-    setBody("");
-  }
+const Form = ( {onChangeHandlerTitle, title, onChangeHandlerBody, body, onClickHandler} ) => {
 
   return (
     <div className='form-container'>
@@ -49,7 +15,6 @@ function Form() {
         <Input type="text" onChange={onChangeHandlerBody} value={body}></Input>
         <Button onClick={onClickHandler}>추가하기</Button>
       </FormStyled>
-      <List todos={todos} setTodos={setTodos} />
     </div>
   )
 }
