@@ -2,9 +2,9 @@ import React from 'react';
 import { ButtonBox, Button, TodoContainer } from './style.js';
 
 const Todo = ( {todo, onDeleteHanlder, onCompleteHandler} ) => {
-  const cancelClick = () => {
-    return (todo.isDone ? "취소" : "완료");
-  }
+  
+  const cancelClick = () => ( todo.isDone ? "취소" : "완료" );
+  
   return (
     <TodoContainer>
       <h2>{todo.title}</h2>
