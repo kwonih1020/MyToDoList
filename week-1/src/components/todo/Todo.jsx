@@ -3,15 +3,15 @@ import { ButtonBox, Button, TodoContainer } from './style.js';
 
 const Todo = ( {todo, onDeleteHanlder, onCompleteHandler} ) => {
   
-  const cancelClick = () => ( todo.isDone ? "취소" : "완료" );
+  const cancelHandler = () => ( todo.isDone ? "취소" : "완료" );
   
   return (
     <TodoContainer>
       <h2>{todo.title}</h2>
-      <div>{todo.body}</div>
+      <h4>{todo.body}</h4>
       <ButtonBox>
         <Button onClick={() => onDeleteHanlder(todo.id)}>삭제하기</Button>
-        <Button onClick={() => onCompleteHandler(todo.id)}>{cancelClick()}</Button>
+        <Button onClick={() => onCompleteHandler(todo.id)}>{cancelHandler()}</Button>
       </ButtonBox>
     </TodoContainer>
   )

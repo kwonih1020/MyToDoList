@@ -18,6 +18,12 @@ const Layout = () => {
       title: '개인과제', 
       body: '스스로 개인과제 완성하기', 
       isDone: false
+    },
+    {
+      id: Math.random().toString(36).substring(2, 12), 
+      title: '예방접종', 
+      body: '아기 데리고 병원가지', 
+      isDone: true
     }
   ]);
 
