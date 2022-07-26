@@ -49,7 +49,6 @@ const List = ({todos, setTodos}) => {
           }
         })}
       </ListBox2>
-      
     </ListContainer>
   )
 }

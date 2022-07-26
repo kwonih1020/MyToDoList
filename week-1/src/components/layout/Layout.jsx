@@ -8,8 +8,11 @@ import LayoutContainer from './style.js';
 
 const Layout = () => {
 
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
+  const [inputs, setInputs] = useState({
+    title: '',
+    body: ''
+  });
+
   const [todos, setTodos] = useState([
     {
       id: Math.random().toString(36).substring(2, 12), 
@@ -18,20 +21,16 @@ const Layout = () => {
       isDone: false
     }
   ]);
-  
-  const onChangeHandlerTitle = (e) => {
-    const inputTitle = e.target.value;
-    setTitle(inputTitle);
-    // console.log(inputTitle);
-  }
 
-  const onChangeHandlerBody = (e) => {
-    const inputBody = e.target.value;
-    setBody(inputBody);
-    // console.log(inputBody);
-  }
+  const { title, body } = inputs;
 
-  console.log(title, body);
+  const onChangeHandlerInput = (e) => {
+    const { value, name } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value
+    })
+  };
 
   const onClickHandler = (e) => {
     e.preventDefault();
@@ -42,14 +41,16 @@ const Layout = () => {
       isDone: false,
     }]);
     console.log(todos);
-    setTitle("");
-    setBody("");
+    setInputs({
+      title: '',
+      body: ''
+    });
   }
 
   return (
     <LayoutContainer>
       <Header />
-      <Form onChangeHandlerTitle={onChangeHandlerTitle} onChangeHandlerBody={onChangeHandlerBody} onClickHandler={onClickHandler} todos={todos} setTodos={setTodos} title={title} body={body} />
+      <Form onChangeHandlerInput={onChangeHandlerInput} onClickHandler={onClickHandler} todos={todos} setTodos={setTodos} title={title} body={body} />
       <List todos={todos} setTodos={setTodos} />
     </LayoutContainer>
   )
