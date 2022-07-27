@@ -3,7 +3,7 @@
 import React from 'react';
 import { Button, FormStyled, Label, Input } from './style.js';
 
-const Form = ( { onChangeHandlerInput, title, body, onClickHandler } ) => {
+const Form = ( { onChangeHandlerInput, title, body, onClickHandler} ) => {
   return (
     <FormStyled>
       <Label>제목</Label>

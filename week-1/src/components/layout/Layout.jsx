@@ -12,6 +12,15 @@ const Layout = () => {
     body: ''
   });
 
+  const onChangeHandlerInput = (e) => {
+    const { value, name } = e.target; // 우선 e.target 에서 name 과 value 를 추출
+    setInputs({
+      ...inputs,
+      [name]: value
+    })
+    console.log(e.target.name)
+  };
+
   const [todos, setTodos] = useState([
     {
       id: Math.random().toString(36).substring(2, 12), 
@@ -28,14 +37,8 @@ const Layout = () => {
   ]);
 
   const { title, body } = inputs;
-
-  const onChangeHandlerInput = (e) => {
-    const { value, name } = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value
-    })
-  };
+  // 비구조화 할당을 통해 값 추출
+  // title, body만 변수로 뽑아내기
 
   const onClickHandler = (e) => {
     e.preventDefault();
@@ -55,8 +58,14 @@ const Layout = () => {
   return (
     <LayoutContainer>
       <Header />
-      <Form onChangeHandlerInput={onChangeHandlerInput} onClickHandler={onClickHandler} todos={todos} setTodos={setTodos} title={title} body={body} />
-      <List todos={todos} setTodos={setTodos} />
+      <Form onChangeHandlerInput={onChangeHandlerInput} 
+            onClickHandler={onClickHandler}
+            title={title}
+            body={body}
+      />
+      <List todos={todos} 
+            setTodos={setTodos}  
+      />
     </LayoutContainer>
   );
 }
